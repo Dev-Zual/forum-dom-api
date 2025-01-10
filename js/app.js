@@ -57,6 +57,9 @@ const displayData = (posts) => {
                   </div>
                   <div class="">
                     <button
+                    onclick="handleReadPost('${post?.title}' ,'${
+      post.view_count
+    }')" 
                       class="bg-[#10B981] hover:bg-[#269772] text-white rounded-full text-lg size-8"
                     >
                       <i class="fa-solid fa-envelope-open text-lg"></i>
@@ -69,6 +72,30 @@ const displayData = (posts) => {
         `;
     postContainer.appendChild(div);
   });
+};
+
+let count = 0;
+const handleReadPost = (title, viewCount) => {
+  count++;
+  // set read count
+  const setCount = document.getElementById("read-count");
+  setCount.innerText = count;
+  console.log(title, viewCount);
+  const showReadingContainer = document.getElementById("show-reding-content");
+  const div = document.createElement("div");
+  div.innerHTML = `
+        <div class="bg-white p-5 rounded-lg flex justify-between gap-3">
+                <p class="font-medium max-w-64 break-words">
+                  ${title}
+                </p>
+                <span class="space-x-2 text-[#12132D99]">
+                  <i class="fa-regular fa-eye"></i>
+                  <span>${viewCount}</span>
+                </span>
+              </div>
+    
+    `;
+  showReadingContainer.appendChild(div);
 };
 
 loadAllPost();

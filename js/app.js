@@ -15,7 +15,9 @@ const displayData = (posts) => {
         
         <div class="flex justify-between  bg-[#797DFC1A] rounded-lg p-6">
               <div class="indicator">
-                <span class="indicator-item badge bg-green-600"></span>
+                <span class="indicator-item badge ${
+                  post.isActive ? "bg-green-600" : "bg-red-600"
+                }  "></span>
                 <figure class="">
                   <div class="avatar">
                     <div class="w-24 rounded-xl">
@@ -44,7 +46,9 @@ const displayData = (posts) => {
                       <span>${post.comment_count}</span></span
                     >
                     <span class="space-x-2"
-                      ><i class="fa-regular fa-eye"></i> <span>${post.view_count}</span></span
+                      ><i class="fa-regular fa-eye"></i> <span>${
+                        post.view_count
+                      }</span></span
                     >
                     <span class="space-x-2">
                       <i class="fa-regular fa-clock text-lg"></i>

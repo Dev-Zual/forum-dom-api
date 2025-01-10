@@ -87,8 +87,14 @@
                 <label
                   class="input input-bordered flex items-center gap-2 rounded-full"
                 >
-                  <input type="text" class="grow" placeholder="Search" />
+                  <input
+                    id="search-input"
+                    type="text"
+                    class="grow"
+                    placeholder="Search"
+                  />
                   <button
+                    onclick="handleSearch()"
                     class="btn bg-blue-400 hover:bg-blue-500 rounded-full text-white"
                   >
                     Search

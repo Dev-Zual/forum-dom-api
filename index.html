@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forum site with dom and api</title>
+    <script
+      src="https://kit.fontawesome.com/ee1c0f6e42.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
       rel="stylesheet"
@@ -13,7 +17,51 @@
   </head>
   <body>
     <header>
-      <h1>hello</h1>
+      <div class="container mx-auto">
+        <div class="navbar justify-between bg-base-100">
+          <div class="">
+            <a class="btn btn-ghost text-xl">HotNews</a>
+          </div>
+          <div class="">
+            <div class="space-x-5 text-gray-500 mr-4">
+              <div class="tooltip tooltip-bottom" data-tip="Home">
+                <button
+                  class="bg-gray-100 border-gray-300 border size-10 rounded-full"
+                >
+                  <i class="fa-solid fa-house"></i>
+                </button>
+              </div>
+
+              <div class="tooltip tooltip-bottom" data-tip="Edit">
+                <button
+                  class="bg-gray-100 border-gray-300 border size-10 rounded-full"
+                >
+                  <i class="fa-solid fa-pen"></i>
+                </button>
+              </div>
+              <div class="tooltip tooltip-bottom" data-tip="Add User">
+                <button
+                  class="bg-gray-100 border-gray-300 border size-10 rounded-full"
+                >
+                  <i class="fa-solid fa-user-plus"></i>
+                </button>
+              </div>
+              <div class="tooltip tooltip-bottom" data-tip="Country">
+                <button
+                  class="bg-gray-100 border-gray-300 border size-10 rounded-full"
+                >
+                  <i class="fa-regular fa-flag"></i>
+                </button>
+              </div>
+            </div>
+            <button
+              class="btn bg-blue-400 hover:bg-blue-500 rounded-full text-white"
+            >
+              Sign In
+            </button>
+          </div>
+        </div>
+      </div>
     </header>
     <main></main>
     <footer></footer>

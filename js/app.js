@@ -1,4 +1,5 @@
 const loadAllPost = async (searchText, allPost) => {
+  handleLoading(true);
   const res = await fetch(
     `https://openapi.programming-hero.com/api/retro-forum/${
       searchText ? searchText : allPost
@@ -14,6 +15,7 @@ const displayData = (posts) => {
   // clear the prev data
   postContainer.textContent = "";
   posts.forEach((post) => {
+    handleLoading(false);
     const div = document.createElement("div");
     div.innerHTML = `
         
@@ -103,8 +105,18 @@ const handleReadPost = (title, viewCount) => {
 };
 
 const handleSearch = () => {
+  handleLoading(true);
   const inputText = document.getElementById("search-input").value;
   loadAllPost(`posts?category=${inputText}`);
+};
+
+const handleLoading = (isLoading) => {
+  const spinner = document.getElementById("spinner");
+  if (isLoading) {
+    spinner.classList.remove("hidden");
+  } else {
+    spinner.classList.add("hidden");
+  }
 };
 
 loadAllPost("posts");
